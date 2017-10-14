@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="styles/main.css"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito">
+            <title>
+                Vegans - Babble
+            </title>
+    </head>
+    <body onload="Babble.onLoadMethod()" onbeforeunload="Babble.onUnloadMethod()">
+        <script src="scripts/main.js"></script>        
+        <header class = "Header">
+            <img src="images/Logo.png" alt="Babble. Talk freely" class="Header-logo" tabindex="1"/>
+        </header>
+        <div class="Modal-overlay"></div>
+        <div class = "Modal">
+            <div class = "u-formLine">
+                <h1>Who are you?</h1>
+            </div>
+                <form class= "Modal-form" onsubmit="Babble.SignInWithUser()">
+                    <div class = "u-formLine"> 
+                        <label>Full name:</label> 
+                        <input class = "Modal-form-textInput" type = "text" id="fullNameInputArea" aria-label="type your name here"/><br>
+                    </div>
+                    <div class = "u-formLine">
+                        <label>Email:</label>
+                        <input class = "Modal-form-textInput" type = "email" id="emailInputArea" aria-label="type your email here"/><br>
+                    </div>
+                    <input class="Modal-form-Button Modal-form-Button--save" type = "submit" value="Save" aria-label="Save"/>
+                    <input class= "Modal-form-Button Modal-form-Button--anonymous" type = "button" value="Stay Anonymous" onclick = "Babble.SignInAsAnonymous()" aria-label="Stay Anonymous"/>
+                </form>
+        </div>
+        <nav class="LeftArea">
+        </nav>
+        <main>
+            <div class="RoomInfo"> 
+                <h1 class="RoomInfo-chatTitle" tabindex="2">Vegans</h1>
+                <dl class="RoomInfo-chatStatistics" tabindex="3">
+                    <dt><img class="RoomInfo-chatStatistics-infoImg" src="images/messagesNum.png" alt="number of messages"/></dt>
+                    <dd class="RoomInfo--text" id="numOfMessages">0</dd>
+                    <dt><img class="RoomInfo-chatStatistics-infoImg" src="images/UsersNum.png"  alt="number of users"/></dt>
+                    <dd class="RoomInfo--text" id="numOfUsers">0</dd>
+                </dl>
+            </div>
+            <ul class="DisplayMessages">
+            </ul>
+            <div class= "u-seperator"></div>
+            <form class='SubmitMessage' method = "POST" action = "http://localhost:9000/messages">
+                <div class="Growable">
+                    <pre><span></span><br></pre>
+                    <textarea class="SubmitMessage-textarea" onkeyup="Babble.currentMessageChanged()" aria-label="Write your message here"></textarea>
+                </div>
+                <button class="SubmitMessage-submitbtn" aria-label="send message">
+                    <img class="SubmitMessage-submitbtn-img" src="images/sendButton.png" alt="send message"/>
+                </button>
+            </form>
+        </main>
+    </body>
+</html>

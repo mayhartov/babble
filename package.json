@@ -1,0 +1,27 @@
+{
+  "name": "babble",
+  "main": "index.js",
+  "description": "",
+  "version": "1.0.0",
+  "license": "ISC",
+  "contributors": [
+    {
+      "name": "May"
+    }
+  ],
+  
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^3.5.3",
+    "sinon": "^3.3.0",
+    "sinon-chai": "*",
+    "concurrently": "3.5.0"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha test/server & http-server -p 8081",
+    "start": "concurrently \"http-server\" \"node server/main.js\""
+  }
+}
