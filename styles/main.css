@@ -1,0 +1,403 @@
+html, body { 
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    margin: 0; 
+    border: 0;
+}
+
+html{
+	height: 100%;
+}
+
+
+body{
+	background-color: #F6F6F6;
+	font-family: "Nunito";
+	overflow : hidden;
+    height: 85%;
+}
+
+.LeftArea {
+    background-color: #61D290;
+	display: none;
+	position: flex;
+	width: 18%;
+    height: 100%;
+}
+
+.Header{
+	width: 100%;
+	min-height: 17%;
+	background-color: #353744;
+}
+
+.Header-logo{
+	margin: 1% 0 0% 1%;
+	outline: none;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-track {
+	border-radius: 9px;
+    border: 1px solid #dcdcdc;
+    background-color: #ffffff;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 12px;
+    border: 1px solid #dcdcdc;
+    background-color: #ebedec;
+}
+
+.RoomInfo{
+	padding-top: 1rem;
+	margin-left: 1rem;
+   	width: 90%;
+    display: relative;
+    align-items: flex-end;
+    justify-content: space-between;
+	flex-flow: row wrap;
+	max-height: 10%;
+}
+
+.RoomInfo-chatTitle{
+	margin: 0 0.1rem 0.5rem 0.1rem;
+	position: flex;
+    color: #292929;
+	float: left;	
+}
+
+.RoomInfo-chatStatistics{
+	float: right;
+	position: flex;
+}
+
+.RoomInfo--text{
+	font-family: inherit;
+	font-weight: bold;
+}
+
+h2{
+	width: 80%;
+}
+
+dl{
+	display: flex;
+}
+
+dd {
+	margin: 0 0.5rem 0 0.1rem;
+    float: left;
+	font-family: "Nunito";
+	font-weight: bold;
+}
+
+dt {
+    float: left;
+}
+
+main{
+    width: 100%;
+	height: 85%;
+	position: flex;
+	background-color: #F6F6F6;
+}
+
+.DisplayMessages{
+	background-color: #F6F6F6;
+	width : 99%;
+	height: 78%;
+	overflow-x: hidden;
+	overflow-y: visible;
+	margin-bottom: 0;
+	box-sizing: border-box;
+	border-bottom: none;
+}
+
+ul{
+	border-bottom: 1px solid #D7D7D7;
+}
+
+.Messages-message{
+	list-style-type: none;
+	display: flex;
+	background-color: #F6F6F6;
+}
+
+img {
+    max-width:100%;
+    max-height:100%;
+}
+
+.Messages-message-details{
+	min-inline-size: auto;
+	border: 1px solid #d7d7d7;
+	height: auto;
+	background-color: #ffffff;
+	position: relative;
+	margin-left: 10px;
+	margin-bottom: 20px;
+	border-radius: 10px;
+	max-width: 70%;
+}
+
+
+.Messages-message-details-userName{
+	font-size: 1em;
+	color: #202729;
+	font-family: "Nunito";
+	font-weight: bold;
+	text-align: right;
+	font-style: normal;
+	float: left;
+	margin-right: 10px;
+	margin-left: 0.5rem;
+	margin-top: 0.2rem;	
+}
+
+.Messages-message-details-time{
+	font-weight: lighter;
+    color: #999999;
+    font-size: 0.7em;
+	font-family: "Nunito";
+    margin-top: 0.5rem;	
+	margin-right: 1em;
+	float: left;
+}
+
+.Messages-message-details-content{
+	height: auto;
+	word-wrap: break-word;
+	font-size: 1em;
+	color: rgb(97,97,97);
+	font-family: "Nunito";
+	text-align: left;
+	margin-left: 0.5rem;
+	margin-right: 0.5rem;
+	max-width: 600px;
+}
+
+.Messages-message-details:focus, .Messages-message-details:hover{
+	background-color: #EBEDEC;
+	outline: none;
+}
+
+.Messages-message-details:hover > .deleteMessageBtn, .Messages-message-details:focus > .deleteMessageBtn {
+	height: auto;
+}
+
+.deleteMessageBtn:hover, .deleteMessageBtn:focus {
+	height: auto;
+}
+
+.msgUserImg{
+	width: 36px;
+	height: 36px;
+	border-radius: 18px;
+    -ms-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+}
+
+.deleteMessageBtn{
+	float: right;
+	height: 1px;
+	margin-right: 0.4rem;
+	margin-top: 0.5rem;
+	}
+
+.u-seperator{
+	background-color: #F6F6F6;
+	min-height: 10px;
+	width: 100%;
+}
+
+.SubmitMessage{
+	min-height: 10%;
+	background-color: #ffffff;
+	display: flex;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	outline: none;
+	border-top: 1px solid #d7d7d7;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.Growable {
+	width: 90%;
+	height: auto;
+	position: relative;
+	border: 1px;
+	max-height: 300px;
+	overflow: hidden;
+	-webkit-scrollbar: red;
+}
+
+.Growable SubmitMessage-textarea,
+.Growable pre {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: inherit;
+	font-size: inherit;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+	padding: 0.5em;
+}
+
+
+.SubmitMessage-textarea {
+	width: 100%;
+	resize: none;
+	border: none;
+	outline: none;
+	position: absolute;
+	top: 0; left: 0; 
+	height: 100%;
+	overflow: auto;
+}
+
+.SubmitMessage-submitbtn
+{
+	vertical-align: middle;
+	margin: auto;
+	max-height: 3rem;
+	position: flex;
+	background: #ffffff;
+	border: 0;
+	outline: none;
+}
+
+.Modal {
+	display: none;
+	border: none;
+	position: fixed;	
+	top: 6%;
+	left: 6%;	
+	right: 6%;
+	bottom: 3%;
+	margin: auto;
+	background-color:#f9f9f9;
+	z-index:3;
+	overflow: auto;
+}
+
+.Modal-overlay {
+    display: none;
+	background-color: rgba(0, 0, 0, 0.5);
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 3;
+}
+
+.Modal-form{
+    margin: 1%;	
+	flex-flow: row wrap;
+    align-items: center;
+}
+
+.u-formLine{
+    width: 80%;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+	padding-top: 2rem;
+	padding-left: 10%;
+}
+
+.Modal-form > div > label{
+    color: #616161;
+    margin: 10px 0 0 0;	
+	width: 100%;
+}
+
+.Modal-form-textInput{
+  	font-weight: bold;
+    outline: none;
+    flex-grow: 1;
+    border-radius: 8px;
+    border: 1px solid #d7d7d7;
+	height: 2em;
+	padding-right: 0.5em;
+	padding-left: 0.5em;
+}
+
+.Modal-form-Button{
+    position: absolute;
+    bottom: 8%;
+    float: right;
+    border: 0;
+	height: 1.5em;
+}
+
+.Modal-form-Button--save{
+    width: 5rem;
+    background: linear-gradient(#7CFC00, #228B22);
+    color: white;
+    right: 6%;
+}
+
+.Modal-form-Button--anonymous{
+	background: linear-gradient(#DCDCDC, #A9A9A9);
+    right: calc(5.5rem + 6%);
+}
+
+.Modal:target {
+	display: block;
+}
+
+@media only screen and (min-width : 321px) and (max-width : 637px)
+{
+}
+
+@media only screen and (min-width : 638px) {
+	.LeftArea {
+		display: flex;
+	}
+
+	main{
+		width: 82%;
+	}
+
+	.Modal{
+		width: 35%;
+		height: 35%;
+		padding: 20px;
+		padding-top: 5px;
+	}
+
+	
+    .Modal-form > div > label{
+        width: 5rem;
+    }
+	
+   	.u-formLine{
+        width: 100%;
+		padding-left: 0;
+		padding-top: 0;
+		margin-bottom: 1rem;
+    }
+
+
+	.Messages-message-details{
+		max-width: 600px;
+	}
+
+	.Messages-message-details-content{
+		max-width: 600px;
+	}
+	
+	.SubmitMessage{
+		width: 82%;
+	}
+
+}
+
